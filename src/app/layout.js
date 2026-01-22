@@ -1,18 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
-
-// --- SỬA LẠI ĐÚNG CHUẨN: Dùng tên 'dynamic' ---
-import dynamic from 'next/dynamic'; 
-
-const Header = dynamic(() => import('@/components/Header'), { ssr: false });
-const AuthSync = dynamic(() => import('@/components/AuthSync'), { ssr: false });
-const MandatoryReferral = dynamic(() => import('@/components/MandatoryReferral'), { ssr: false });
-// ----------------------------------------------
-
 import { LanguageProvider } from "@/context/LanguageContext";
 import Footer from "@/components/Footer"; 
-import WarningMarquee from "@/components/WarningMarquee"; 
+import TopSection from "@/components/TopSection"; // Gọi file mới vào
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,13 +18,14 @@ export default function RootLayout({ children }) {
       <html lang="vi">
         <body className={inter.className}>
           <LanguageProvider>
-            <AuthSync />
-            <MandatoryReferral />
-            <Header />
-            <WarningMarquee />
+            
+            {/* Toàn bộ phần Header/Auth đã được chuyển vào đây */}
+            <TopSection />
+            
             <div className="min-h-screen">
                {children}
             </div>
+
             <Footer />
           </LanguageProvider>
         </body>
