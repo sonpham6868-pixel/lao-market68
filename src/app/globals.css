@@ -1,0 +1,19 @@
+@import "tailwindcss";
+/* --- HIỆU ỨNG CHỮ CHẠY (MARQUEE) --- */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap; /* Bắt buộc không xuống dòng */
+  /* Sửa 30s thành 80s để chạy chậm hơn */
+  animation: marquee 80s linear infinite;
+  cursor: pointer; /* Hiện bàn tay để khách biết có thể tương tác */
+}
+
+/* TÍNH NĂNG MỚI: Di chuột vào thì dừng lại */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
