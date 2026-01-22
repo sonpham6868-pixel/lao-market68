@@ -1,3 +1,9 @@
+
+export const dynamic = 'force-dynamic'; // <--- THÊM DÒNG NÀY Ở TRÊN CÙNG
+
+import { Inter } from "next/font/google";
+import "./globals.css";
+// ... (các phần dưới giữ nguyên)
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
