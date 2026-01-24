@@ -1,15 +1,11 @@
+export const dynamic = 'force-dynamic'; // Bắt buộc Web chạy động để tránh lỗi treo Build
 
-export const dynamic = 'force-dynamic'; // <--- THÊM DÒNG NÀY Ở TRÊN CÙNG
-
-import { Inter } from "next/font/google";
-import "./globals.css";
-// ... (các phần dưới giữ nguyên)
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 import { LanguageProvider } from "@/context/LanguageContext";
 import Footer from "@/components/Footer"; 
-import TopSection from "@/components/TopSection"; // Gọi file mới vào
+import TopSection from "@/components/TopSection"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +21,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <LanguageProvider>
             
-            {/* Toàn bộ phần Header/Auth đã được chuyển vào đây */}
+            {/* Header và Auth đã được chuyển vào đây để tắt SSR an toàn */}
             <TopSection />
             
             <div className="min-h-screen">
