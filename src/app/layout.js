@@ -1,38 +1,23 @@
-export const dynamic = 'force-dynamic'; // Bắt buộc Web chạy động để tránh lỗi treo Build
-
-import { Inter } from "next/font/google";//
+export const dynamic = 'force-dynamic';
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs';
-import { LanguageProvider } from "@/context/LanguageContext";
-import Footer from "@/components/Footer"; 
-import TopSection from "@/components/TopSection"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lao Market",
-  description: "Sàn thương mại điện tử Lào",
+  title: "Test Web",
+  description: "Kiem tra ket noi",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
-      <html lang="vi">
-        <body className={inter.className}>
-          <LanguageProvider>
-            
-            {/* Header và Auth đã được chuyển vào đây để tắt SSR an toàn */}
-            <TopSection />
-            
-            <div className="min-h-screen">
-               {children}
-            </div>
-
-            <Footer />
-          </LanguageProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="vi">
+      <body className={inter.className}>
+        {/* Tạm thời bỏ hết ClerkProvider và TopSection */}
+        <div style={{ padding: '20px' }}>
+            {children}
+        </div>
+      </body>
+    </html>
   );
 }
-// Update fix loi trung lap V2
