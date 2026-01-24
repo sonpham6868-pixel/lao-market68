@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'; // Bắt buộc Web chạy động để tránh lỗi treo Build
 
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google";//
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs';
 import { LanguageProvider } from "@/context/LanguageContext";
