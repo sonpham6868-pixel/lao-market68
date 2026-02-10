@@ -1,22 +1,26 @@
-export const dynamic = 'force-dynamic'; // Chữ 'export' phải viết thường
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Test Web",
-  description: "Kiem tra ket noi tu Lao",
+  title: "Lao Market",
+  description: "Sàn thương mại điện tử số 1 tại Lào",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi">
-      <body className={inter.className}>
-        <div style={{ padding: '20px' }}>
-            {children}
-        </div>
-      </body>
-    </html>
+    /* Bọc toàn bộ ứng dụng trong ClerkProvider để quản lý đăng nhập */
+    <ClerkProvider>
+      <html lang="vi">
+        <body className={inter.className}>
+          {/* Nơi hiển thị nội dung các trang con (page.js) */}
+          <div className="min-h-screen flex flex-col">
+             {children}
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
