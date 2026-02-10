@@ -1,5 +1,5 @@
 'use client';
-import { useLanguage } from "@/context/Language-Context";
+import { useLanguage } from "@/context/language-context";
 
 export default function WarningMarquee() {
   const { t } = useLanguage();

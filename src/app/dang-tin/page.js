@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { CldUploadWidget } from 'next-cloudinary';
-import { useLanguage } from '@/context/Language-Context';
+import { useLanguage } from '@/context/language-context';
 
 export default function CreateListing() {
   const { t } = useLanguage();

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
-import { useLanguage } from '@/context/Language-Context';
+import { useLanguage } from '@/context/language-context';
 import { CldUploadWidget } from 'next-cloudinary';
 import { useRouter } from 'next/navigation';
 
