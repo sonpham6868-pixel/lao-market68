@@ -1,7 +1,7 @@
 'use client';
 import { useUser } from '@clerk/nextjs';
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/Language-Context';
 
 export default function MyWallet() {
   const { t } = useLanguage(); 

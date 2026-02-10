@@ -2,6 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
+// 👇 QUAN TRỌNG: Import bộ ngôn ngữ (Kiểm tra đường dẫn này nhé)
+import { LanguageProvider } from "@/context/language-context"; 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,16 +14,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    /* Bọc toàn bộ ứng dụng trong ClerkProvider để quản lý đăng nhập */
     <ClerkProvider>
-      <html lang="vi">
-        <body className={inter.className}>
-          {/* Nơi hiển thị nội dung các trang con (page.js) */}
-          <div className="min-h-screen flex flex-col">
-             {children}
-          </div>
-        </body>
-      </html>
+      {/* 👇 Bọc LanguageProvider vào bên trong ClerkProvider */}
+      <LanguageProvider>
+        <html lang="vi">
+          <body className={inter.className}>
+            <div className="min-h-screen flex flex-col">
+               {children}
+            </div>
+          </body>
+        </html>
+      </LanguageProvider>
     </ClerkProvider>
   );
 }

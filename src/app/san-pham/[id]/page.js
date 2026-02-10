@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, use } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/Language-Context';
 import Link from 'next/link';
 
 export default function ListingDetail({ params }) {

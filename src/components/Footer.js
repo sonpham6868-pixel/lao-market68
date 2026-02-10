@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useLanguage } from '@/context/LanguageContext'; // <--- Import này quan trọng
+import { useLanguage } from '@/context/Language-Context'; // <--- Import này quan trọng
 
 export default function Footer() {
   const { t } = useLanguage(); // <--- Lấy từ điển ra dùng

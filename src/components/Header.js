@@ -2,7 +2,7 @@
 import Link from "next/link";
 // 1. Import đầy đủ các công cụ của Clerk
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/Language-Context";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
